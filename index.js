@@ -3,11 +3,17 @@ const { graphql, buildSchema } = require('graphql')
 //Definiendo esquema
 const schema = buildSchema(`
     type Query {
-        hello: String
+        hello: String,
+        saludo: String
     }
 `)
 
+const resolvers = {
+    hello: () => 'Hola Mundo',
+    saludo: () => 'Hola a todos'
+}
+
 //Ejecutarel query hello
-graphql(schema, '{ hello }').then( data => {
+graphql(schema, '{ saludo }', resolvers).then( data => {
     console.log(data)
 })
