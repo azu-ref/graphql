@@ -1,12 +1,15 @@
-type Courses {
-    _id: ID
-    title: String
+type Course {
+    _id: ID!
+    title: String!
     teacher: String
-    description: String
+    description: String!
     topic: String
 }
 
 
 type Query {
-        getCourses: [Courses]
+        "Devuelve todos los cursos"
+        getCourses: [Course]
+        "Devuelve un curso"
+        getCourse(_id: ID!): Course
     }
