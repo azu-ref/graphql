@@ -1,0 +1,16 @@
+las variables en graphql se designan con el simbolo $, y se les pasa el valor por medio 
+de un objeto json, ejemplo:
+-----------------------------------------------------------------
+mutation addPersonToCurse2($course: ID!, $person: ID! ){
+  addPeople(courseID: $course, personID: $person){
+    _id
+    title
+  }
+}
+
+--------------------------------------------------------------------
+query variables: 
+{
+  "course": "5d13d24476c404670ecd1a58",
+  "person": "5d141d3570cb4831b04a7c15"
+}
